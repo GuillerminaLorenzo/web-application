@@ -7,16 +7,11 @@ class Application < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-  get '/hello' do
-    name = params[:name] 
+  get '/names' do
+    name1 = params[:name1] 
+    name2 = params[:name2] 
+    name3 = params[:name3] 
   
-    return "Hello #{name}"
-  end
-
-  post '/submit' do
-    name = params[:name] 
-    message = params[:message]
-
-    return "Thanks #{name}, you sent this message: #{message} "
+    return "#{name1}, #{name2}, #{name3}"
   end
 end
